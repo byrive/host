@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>略等生</title>
+<link rel="icon" href="logo_head.gif" type="image/x-icon"/>
+</head>
+<script type="text/javascript" src="array.js"></script>
+<style type="text/css">
+.get_body_by_click{height: auto;width: 600px;float: right;background: #ccc;}
+.serch_button{width: 80px;height: 30px;border: #cc3a64 solid 2px;color: #fff; background: #fc3a64;cursor:pointer;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
+.serch_button:hover{background:#fc3020;}
+.windows_bg{width:100%;height: 100%;background:#000;position: fixed;opacity:0.6;z-index: 15;display:none;}
+#end_div{background: #ccc;font-size: 11px;color: #000;}
+.talk_{font-size: 15px;background: rgba(255,255,255);border:#000 solid 2px;border-radius: 3px 3px 3px 3px;width: 300px;height: 200px;margin: 0 auto;margin-top: 200px;text-align: center;font-weight: 700px;}
+body{margin:0;padding:0;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;background: #fff;}
+.behind_div{width:1000px;height:700px; margin:0 auto; background:url(bg.jpg) center no-repeat; margin-bottom:800px;}
+#_mute >a{display: block;margin-left:10px;}
+#_mute >a:link{color: #333;}
+#_mute >a:hover{text-decoration: underline;color:#f00;}
+.body_from_behind{height:auto;width: 600px;}
+.right_div{width:600px; height:900px; float:right; background:#ccc; border-left:#000 solid 2px;}
+#head_p{color:#000;text-decoration:none;}
+a:visited{color:#000;text-decoration:none;}
+a:hover{color:red;text-decoration:underline;cursor:pointer;}
+a:link{text-decoration:none;color:#000;}
+.div_input{margin-top: 50px;width:300px;height: 50px;  margin: 0 auto; font-size: 20px;display: inline-block;}
+.div_input >p{font-size: 15px;line-height: 20px;color: red;}
+#head_bo_he{margin:0 auto;background:#fff;width:600px;margin-bottom:5px;border-left: 1px #000 solid;border-bottom: 1px #000 solid;font-size:11px; line-height:80px; font-weight:900; height:80px; background:url(head.jpg);text-align: right;}
+*{margin: 0; padding: 0;}
+ input:focus{outline:none;}
+.choose_div_2 >a:link{color: blue;font-size: 11px;}
+.choose_div_2 >a:hover{color: red;font-size: 11px;text-decoration: underline;} 
+ .choose_div_2 >a:visited{color: blue;font-size: 11px;}
+ @font-face{font-family:ty;src:url(vedio.TTF) format("truetype");}
+</style>
+<script type="text/javascript">
+	var  sUserAgent=navigator.userAgent.toLowerCase()
+  var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad'
+  var bIsIphone = sUserAgent.match(/iphone os/i) == 'iphone os'
+  var bIsMidp = sUserAgent.match(/midp/i) == 'midp'
+  var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4'
+  var bIsUc = sUserAgent.match(/ucweb/i) == 'web'
+  var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce'
+  var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile'
+  var bIsAndroid = sUserAgent.match(/android/i) == 'android'
+		  if (bIsAndroid || bIsIpad || bIsIphone || bIsWM) {
+		  	var behind=document.getElementByclassName('behind_div')
+		  	behind.style.width="600px"
+        document.getElementById("logo").style.height="100px"
+        document.getElementById("logo").style.width="120px"
+		  }
+</script>
+<body>
+<div class="windows_bg" id="windows_bg">
+		<div class="talk_">
+			<font color="red" size="19px" > 5秒后关闭!!!</font><br>
+			投稿联系：微信Moscow__thwars<br>
+			数据来源网络<br>
+			源码github:aswatercoo<br>
+			谢谢!
+   		</div>
+   		<div>
+   		</div>
+</div>
+<div class="behind_div">
+		<div  class="right_div">
+				<div id="head_bo_he" >
+   						<p id="head_p">&nbsp; &nbsp;
+   							<a onclick="out_win()">|联系我们</a> 
+   							<a onclick="out_win()">|我要投稿</a> 
+   							<a onclick="out_win()">|数据来源</a> 
+   							<a onclick="out_win()">|开放源码</a>
+   							&nbsp; &nbsp;
+   						</p>
+				</div>
+				<div class="about_">
+				</div>
+				<div class="logo_div">
+		 				<img src="logo.gif" width="200" height="140" style="display: inline-block; float: left;" id="logo">
+						<div  class="div_input">
+								<input type="text" id="serch_" style="display: inline-block; margin:0 auto;  width: 200px; height: 30px; border: #fc3a64 solid 2px; margin-top: 30px;">
+								<input type="button" id="serch_button" onClick="serch_doc()"
+     								class="serch_button" value="搜索">
+								<div class="choose_div" id="choose_div">
+										<ol id="_mute" style=" color: #f00;font-size:12px; line-height: 20px;">
+											--热门搜索--
+										<a href="javascript:;" onclick="play_(28)">.历年理综高考必考总结(一)</a>
+										<a href="javascript:;" onclick="play_(29)">.心理辅导战役</a>
+										<a href="javascript:;" onclick="play_(30)">.高中生必读精品</a>
+										</ol>
+								</div>
+								<p>
+									<a href="#end_div" style="display: inline-block; float: right; font-size: 11px;">->></a>
+									<br>
+									<br>
+								</p>
+						</div>
+						<div class="choose_div_2" style="color: blue; font-size: 12px; line-height: 25px; text-align: center;">
+							---物理习题---
+									<br>
+									<a href="javascript:;" onclick="play_(1)">新课标物理全国卷图片版（一）</a>
+									<a href="javascript:;" onclick="play_(2)">新课标物理全国卷图片版（二）</a>
+									<a href="javascript:;" onclick="play_(3)">新课标物理全国卷图片版（三）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(4)">江西卷物理备考图片版（四）</a>
+									<a href="javascript:;" onclick="play_(5)">黑龙江物理备考图片版（五）</a>
+									<a href="javascript:;" onclick="play_(6)">新疆卷物理备考图片版（六）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(7)">综合卷物理备考图片版（七）</a>
+									<a href="javascript:;" onclick="play_(8)">综合卷物理备考图片版（八）</a>
+									<a href="javascript:;" onclick="play_(9)">综合卷物理备考图片版（九）</a>
+									<br>
+									<a href="#end_div" style="display: inline-block; float: right; font-size: 11px; color:black;">获取更多<<</a>
+									<br>
+							---化学习题---
+									<br>
+									<a href="javascript:;" onclick="play_(10)">新课标化学全国卷图片版（一）</a>
+									<a href="javascript:;" onclick="play_(11)">新课标化学全国卷图片版（二）</a>
+									<a href="javascript:;" onclick="play_(12)">新课标化学全国卷图片版（三）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(13)">内蒙古化学备考图片版（四）</a>
+									<a href="javascript:;" onclick="play_(14)">贵州卷化学备考图片版（五）</a>
+									<a href="javascript:;" onclick="play_(15)">四川卷化学备考图片版（六）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(16)">综合卷化学备考图片版（七）</a>
+									<a href="javascript:;" onclick="play_(17)">综合卷化学备考图片版（八）</a>
+									<a href="javascript:;" onclick="play_(18)">综合卷化学备考图片版（九）</a>
+									<br>
+									<a href="#end_div" style="display: inline-block; float: right; font-size: 11px; color:black;">获取更多<<</a>
+									<br>
+							---生物习题---
+									<br>
+									<a href="javascript:;" onclick="play_(19)">新课标生物全国卷图片版（一）</a>
+									<a href="javascript:;" onclick="play_(20)">新课标生物全国卷图片版（二）</a>
+									<a href="javascript:;" onclick="play_(21)">新课标生物全国卷图片版（三）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(22)">广东卷生物备考图片版（四）</a>
+									<a href="javascript:;" onclick="play_(23)">山西卷生物备考图片版（五）</a>
+									<a href="javascript:;" onclick="play_(24)">陕西卷生物备考图片版（六）</a>
+									<br>
+									<a href="javascript:;" onclick="play_(25)">综合卷生物备考图片版（七）</a>
+									<a href="javascript:;" onclick="play_(26)">综合卷生物备考图片版（八）</a>
+									<a href="javascript:;" onclick="play_(27)">综合卷生物备考图片版（九）</a>
+									<br>
+									<a href="#end_div" style="display: inline-block; float: right; font-size: 11px; color:black;">获取更多<<
+									</a>
+									<br>
+									<br>
+									<br>
+						</div>
+				</div>
+				<div id="body_from_behind" class="body_from_behind">
+					<p id="point"></p>
+				</div>
+				<div style="width: 600px; height:100%; margin:0 auto; margin-top: 20px; background: #fff; color: #ccc;">
+				<br>
+				<br>
+				<p style=" display: inline-block; height:100px; width:600px;  margin:0 auto; text-align:center;" id="end_div">
+				<br>
+				来源：里维网络|
+				<a href="javascript:;" onclick="code_adm()" style="display: inline-block; margin: 0 auto; font-size: 11px; color:black;">
+					<u>管理员|</u>
+				</a>gihub：aswatercoo|邮箱：aswatercoo@sina.com<br>
+				本网页内容未经允许，禁止装载和复制|如需学习源码请发送申请到邮箱索取链接<br>
+				<br>
+				素材来源网络，仅供学习交流
+				</p>
+				
+		</div>
+		<div class="get_body_by_click">
+		</div>
+		</div>
+</div>
+<code>
+<textarea id="inpu" style="background: #000; height:400px; width:300px; border-radius: 7px 7px 7px 7px; position: fixed;right: 0; bottom: 0; font-family: ty; color: #fff; font-size:15px; display: block; outline: none; display: none;">
+~now you can code some word to get!
+</textarea>
+</code>
+<script type="text/javascript">
+	function code_adm(){
+		document.getElementById("inpu").style.display="block"
+	}
+var	arry_num=new Array()
+var counter=0
+var key_=0
+var user_name="aice"
+var power_user="root"
+var tip_text="[enter]=enter*****[b]=\"baidutranslate\"[s]=\"search#linuxshell\"[t]/[t-b]Skin peeler"
+var first_text_head=tip_text+user_name+"@"+power_user+"$"
+document.getElementById("inpu").value=first_text_head
+function renew_fun(){
+	counter++
+	var last_text_head=document.getElementById("inpu").value
+	arry_num[counter]=first_text_head.length
+	var def_str_num=arry_num[counter-1]
+	first_text_head.toString()
+	var def_str1=first_text_head.substr(def_str_num)
+	var def_str_m=def_str1.indexOf("->")+3
+	var def_str2=def_str1.substr(def_str_m)
+	def_str2.toString()
+	var recive_text="<-ENTER->"
+		if (def_str2=="b")
+{
+		window.open("https://fanyi.baidu.com/?aldtype=16047#auto/zh")
+		recive_text='->'
+}
+if (def_str2=="exit") {
+document.getElementById("inpu").style.display="none"
+recive_text='->'
+}
+if (def_str2=="h")
+{
+		window.open("baidu.com")
+			recive_text='->'
+}
+	var result_rec=last_text_head+recive_text
+return result_rec
+}
+document.onkeydown=function (event){
+	var event_ = event || window.event 
+if(event_ && event_.keyCode==13){
+	if (document.getElementById("inpu").value==tip_text+user_name+"@"+power_user+"$"+"aice" && key_==0){
+	first_text_head=document.getElementById("inpu").value
+document.getElementById("inpu").value=renew_fun()
+key_++		
+var counter_2=0;
+for (counter_2=0;counter_2<=5;counter_2++)
+		renew_fun();
+}
+if (key_==1) {
+first_text_head=document.getElementById("inpu").value
+document.getElementById("inpu").value=renew_fun(first_text_head)
+}
+}
+}
+</script>
+</body>
+<script type="text/javascript">
+      function create_img(img_num){
+         var img_get_num=1
+         var point=document.getElementById("point")
+         for (img_get_num=1;img_get_num<=file[img_num];img_get_num++){
+         var img_=document.createElement("img")
+         var img_src="img_data/"+img_num+"/"+img_get_num+".gif"
+         img_.src=img_src
+         img_.id="img_"+img_get_num
+         point.appendChild(img_)
+        }
+        var anser_p=document.createElement("p")
+        anser_p.id="anser"
+        anser_p.innerHTML=anserse[img_num]
+        point.appendChild(anser_p)
+        window.location.href="index.html#anser"
+      }
+      
+      function play_(num_){
+        if (num_==28) {
+          document.getElementById("serch_").value="历年理综高考必考总结(一)"
+        }
+        if (num_==29) {
+          document.getElementById("serch_").value="心理辅导战役"
+        }
+        if (num_==30) {
+          document.getElementById("serch_").value="高中生必读精品"
+        }
+        if (num_<=27) {
+          create_img(num_)
+        }
+      }
+     function serch_doc(text_serch){
+                  var text_serch="#####——————#####"
+                  var post_value="value="+document.getElementById('serch_').value
+                  document.getElementById("choose_div").innerHTML=text_serch
+      }
+      function closs_win(){
+      document.getElementById("windows_bg").style.display="none"
+      }
+      function out_win(){
+      document.getElementById('windows_bg').style.display="block"
+      setTimeout("closs_win()",5000)
+      }
+      function ajax(method, url, val) { // 方法，路径，传送数据
+ var  xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function() {
+  if(xhr.readyState == 4) {
+   if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+    content.innerHTML = xhr.responseText;
+   } else {
+    alert('Request was unsuccessful: ' + xhr.status);
+   }
+  }
+ };
+ 
+ xhr.open(method, url, true); 
+ if(val)
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+ xhr.send(val);
+}
+</script>
+</html>
